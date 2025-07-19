@@ -1,0 +1,97 @@
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./radarr/config:/config
+      - /Main:/media
+    ports:
+      - "7878:7878"
+    restart: unless-stopped
+    networks:
+      - media
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./sonarr/config:/config
+      - /Main:/media
+    ports:
+      - "8989:8989"
+    restart: unless-stopped
+    networks:
+      - media
+
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./bazarr/config:/config
+      - /Main:/media
+    ports:
+      - "6767:6767"
+    restart: unless-stopped
+    networks:
+      - media
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+      - WEBUI_PORT=8080
+    volumes:
+      - ./qbittorrent/config:/config
+      - /Main:/downloads
+    ports:
+      - "8080:8080"
+      - "6881:6881"
+      - "6881:6881/udp"
+    restart: unless-stopped
+    networks:
+      - media
+
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - LOG_LEVEL=debug
+      - TZ=Asia/Kolkata
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./jellyseerr/config:/app/config
+    restart: unless-stopped
+    networks:
+      - media
+
+networks:
+  media:
+    driver: bridge
+
+  homarr:
+    container_name: homarr
+    image: ghcr.io/homarr-labs/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - ./homarr/appdata:/appdata
+    environment:
+      - SECRET_ENCRYPTION_KEY=
+    ports:
+      - '7575:7575'
