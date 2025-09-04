@@ -100,8 +100,6 @@ _For example: `http://192.168.1.50:8096` for Jellyfin._
 
 - [Docker Compose Documentation](https://docs.docker.com/compose/)
 - [Proxmox Containers](https://pve.proxmox.com/wiki/Linux_Container)
-- Individual service GitHub pages (see each service’s README for details)
+- Individual service GitHub pages (see each service’s Github page for more details)
 
 ---
-
-Let me know if you want to add more details for specific services, integration tips, or troubleshooting steps!
