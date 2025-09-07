@@ -26,7 +26,7 @@ Welcome to my personal **Proxmox-based homelab** documentation! This setup is de
   A 1TB HDD formatted with **ext4** is used for bulk storage.  
   - The HDD is mounted directly (bind mount) into the Servarr LXC for media management.
   - Files are also copied/shared with the Apps LXC, allowing Jellyfin and other apps access to the same media library.
-  - **SMB sharing** is also set up in the Apps LXC, but for details see the [samba share](/setup/samba/) directory.
+  - **SMB sharing** is also set up in the Apps LXC, but for details see the [samba share](/setup /samba) directory.
 
 > **Why ext4 & direct mounts?**  
 > NFS is avoided due to performance concerns. Direct ext4 bind mounts ensure fast and reliable access for Docker containers inside the LXCs.
@@ -55,7 +55,7 @@ Welcome to my personal **Proxmox-based homelab** documentation! This setup is de
 ## 📝 Tips & Further Reading
 
 - For further tips to use the services convinently for free of cost see the planned [tips](../tips/) directory.
-- For SMB setup, refer to [samba share](/setup/samba/).
+- For SMB setup, refer to [samba share](/setup /samba/).
 
 ---
 
