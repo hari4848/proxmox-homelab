@@ -36,7 +36,7 @@ Welcome to my personal **Proxmox-based homelab** documentation! This setup is de
 ## ⚡ Management
 
 - **Docker Compose** is used for managing all containerized services in both LXCs.
-- For detailed Docker setups and compose files, refer to the [docker](docker-compose) directory.
+- For detailed Docker setups and compose files, refer to the [docker](proxmox-homelab/docker-compose) directory.
 
 ---
 
