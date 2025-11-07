@@ -217,7 +217,7 @@ n8n → Can integrate with any service
 5. **RAM**: 12GB shared between Proxmox and containers is tight
 6. **Upload Speed**: Jio Fiber upload speeds may limit remote streaming quality
 
-## architecture diagram
+## Architecture diagram
 ```mermaid
 graph TB
     JioFiber["🌐 Internet<br/>Jio Fiber (CGNAT)"]
