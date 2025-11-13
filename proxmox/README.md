@@ -26,7 +26,7 @@ Welcome to my personal **Proxmox-based homelab** documentation! This setup is de
   A 1TB HDD formatted with **ext4** is used for bulk storage.  
   - The HDD is mounted directly (bind mount) into the Servarr LXC for media management.
   - Files are also copied/shared with the Apps LXC, allowing Jellyfin and other apps access to the same media library.
-  - **SMB sharing** is also set up in the Apps LXC, but for details see the [samba share](/setup_/samba) directory.
+   - **SMB sharing** is also set up in the Apps LXC, but for details see the [samba share](../Services/Samba/) directory.
 
 > **Why ext4 & direct mounts?**  
 > NFS is avoided due to performance concerns. Direct ext4 bind mounts ensure fast and reliable access for Docker containers inside the LXCs.
@@ -42,26 +42,26 @@ Welcome to my personal **Proxmox-based homelab** documentation! This setup is de
 
 ## 🖼️ Screenshots
 
-*(Add your images here for visual reference. Example below:)*
-
-```markdown
-![Proxmox Dashboard](images/proxmox-dashboard.png)
-![LXC Setup](images/lxc-setup.png)
-![Storage Configuration](images/storage-config.png)
-```
+![Proxmox Dashboard](../screenshots/proxmox dashboard.jpg)
+![Homarr Dashboard](../screenshots/homarr dashboard.jpg)
+![Jellyfin Home Page](../screenshots/Jellyfin home page.jpg)
 
 ---
 
 ## 📝 Tips & Further Reading
 
-- For further tips to use the services convinently for free of cost see the planned [tips](../tips/) directory.
-- For SMB setup, refer to [samba share](/setup /samba/).
-
 ---
 
 ## 📂 Repository Structure
 
-*(You can expand this section as needed)*
+```
+proxmox/
+├── lxc-configs/
+│   ├── Apps.conf          # Configuration for Apps LXC container
+│   ├── servarr.conf       # Configuration for Servarr LXC container
+│   └── README.md          # Documentation for LXC setup and configurations
+└── README.md              # This file
+```
 
 ---
 
