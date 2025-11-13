@@ -58,34 +58,8 @@ graph TB
 
 ## Step 2: Docker Compose Setup
 
-Create `docker-compose.yml`:
+copy the compose file 
 
-```yaml
-version: '3.8'
-
-services:
-  npm:
-    image: 'jc21/nginx-proxy-manager:latest'
-    container_name: nginx-proxy-manager
-    restart: unless-stopped
-    ports:
-      - '80:80'    # Public HTTP
-      - '443:443'  # Public HTTPS
-      - '81:81'    # Admin interface
-    volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
-    environment:
-      - TZ=Asia/Kolkata
-      - PUID=1000
-      - PGID=1000
-    networks:
-      - npm-network
-
-networks:
-  npm-network:
-    driver: bridge
-```
 
 ## Step 3: Deploy Nginx Proxy Manager
 
