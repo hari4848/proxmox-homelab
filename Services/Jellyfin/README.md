@@ -2,7 +2,7 @@
 
 A free, open-source media server that organizes your media files and streams them to any device. Jellyfin is the perfect alternative to proprietary media servers, giving you full control over your media library.
 
-![Jellyfin Home Page](../../screenshots/Jellyfin home page.jpg)
+![Jellyfin Home Page](../../screenshots/Jellyfin_homepage.jpg)
 
 ## Overview
 
