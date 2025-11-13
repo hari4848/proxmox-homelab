@@ -2,7 +2,7 @@
 
 A modern, customizable dashboard for organizing and accessing all your self-hosted services from a single interface.
 
-![Homarr Dashboard](../../screenshots/homarr dashboard.jpg)
+![Homarr Dashboard](../../screenshots/homarr_dashboard.jpg)
 
 ## Overview
 
