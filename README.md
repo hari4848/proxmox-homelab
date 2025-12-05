@@ -2,6 +2,14 @@
 
 A documentation of my personal homelab infrastructure built on Proxmox, showcasing container orchestration, networking, and cloud integration.
 
+## 📂 Repository Structure
+
+- **[Services/](./Services)** - Docker Compose configurations and service documentation
+- **[azure-vm/](./azure-vm)** - Azure VM setup and Nginx Proxy Manager configuration
+- **[docs/](./docs)** - Additional documentation and guides
+- **[proxmox/](./proxmox)** - Proxmox VE configuration and setup files
+- **[screenshots/](./screenshots)** - Visual documentation and diagrams
+
 ## Overview
 
 This homelab demonstrates a production-like setup handling the challenge of ISP CGNAT (Carrier-Grade NAT) restrictions by leveraging Tailscale VPN and Azure cloud infrastructure for remote access and public service exposure.
@@ -98,6 +106,9 @@ graph TB
 - **Subnet Routing**: Tailscale subnet router exposes internal Docker networks
 
 ### Services Running
+
+> 📦 **See [Services/](./Services) directory for Docker Compose files and detailed configurations**
+
 - **Jellyfin**: Personal media streaming server
 - **Audiobookshelf**: Audiobook and podcast server
 - **Home Assistant**: Home automation platform
@@ -106,10 +117,11 @@ graph TB
 - **Samba**: Local network file sharing
 
 ### Infrastructure
-- **Virtualization**: Proxmox VE for hypervisor
+- **Virtualization**: Proxmox VE for hypervisor ([Setup Guide](./proxmox))
 - **Containers**: LXC containers for isolation and resource efficiency
 - **Orchestration**: Docker and Docker Compose for application deployment
 - **Storage**: Separate HDD for media, SSD for applications
+- **Cloud**: Azure VM B2ats v2 ([Configuration](./azure-vm))
 
 ## Technologies Used
 
@@ -127,7 +139,7 @@ My ISP (Jio Fiber) uses CGNAT, which means I don't have a public IP address and 
 
 1. Set up a Tailscale mesh VPN connecting homelab and Azure VM
 2. Configured Tailscale subnet router on homelab to expose Docker networks
-3. Deployed Nginx Proxy Manager on Azure VM as reverse proxy
+3. Deployed Nginx Proxy Manager on Azure VM as reverse proxy ([Config](./azure-vm))
 4. Pointed domain to Azure VM's public IP
 5. Result: Secure remote access and public-facing services without needing ISP cooperation
 
@@ -136,6 +148,14 @@ My ISP (Jio Fiber) uses CGNAT, which means I don't have a public IP address and 
 - **Local Network**: Direct access via Samba and local IPs
 - **Remote Access**: Tailscale VPN for secure direct connection
 - **Public Services**: HTTPS through domain → Azure VM → Tailscale → Homelab
+
+## 📖 Documentation
+
+For more detailed setup guides and documentation, check the [docs/](./docs) directory.
+
+## 📸 Screenshots
+
+Visual documentation and architecture diagrams are available in the [screenshots/](./screenshots) directory.
 
 ---
 
